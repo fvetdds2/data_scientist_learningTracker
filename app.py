@@ -644,9 +644,9 @@ with tab_resume:
         },
     ]
 
-    for item in resume_items:
+    for idx, item in enumerate(resume_items):
         w_done = week_complete(data, item["week"])
-        done_key = f"resume_done_{item['week']}_{item['section'][:10]}"
+        done_key = f"resume_done_{idx}"
         is_manually_done = data["tasks"].get(done_key, False)
 
         col_icon, col_content, col_check = st.columns([0.4, 5, 1])
